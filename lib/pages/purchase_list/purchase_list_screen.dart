@@ -6,6 +6,7 @@ import 'package:apex_dmit/pages/purchase_list/index.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import '../../core/index.dart';
+import '../purchase_add/purchase_add_screen.dart';
 
 class PurchaseListScreen extends BaseScreen<PurchaseListModel, PurchaseListViewmodel> {
   const PurchaseListScreen({super.key});
@@ -137,7 +138,12 @@ class PurchaseListScreen extends BaseScreen<PurchaseListModel, PurchaseListViewm
           floatingActionButton: FloatingActionButton(
             backgroundColor: AppColors.floatingButtonColor,
             shape: CircleBorder(),
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => PurchaseAddScreen(),
+              );
+            },
             child: Container(
               width: 15.dp,
               height: 15.dp,
@@ -163,5 +169,7 @@ class PurchaseListScreen extends BaseScreen<PurchaseListModel, PurchaseListViewm
       ],
     );
   }
+
+
 
 }

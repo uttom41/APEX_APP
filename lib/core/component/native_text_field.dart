@@ -7,12 +7,14 @@ Widget nativeTextField({
   Widget? prefixIcon,
   Widget? suffixIcon,
   bool obscureText = false,
+  double height =  46,
+  double width =  279,
   required TextEditingController controller,
   required ValueChanged<String?> onChanged
 }) {
   return Container(
-    width: 279.dp,
-    height: 46.dp,
+    width: width.dp,
+    height: height.dp,
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(10.dp),
