@@ -17,12 +17,20 @@ class PurchaseListScreen extends BaseScreen<PurchaseListModel, PurchaseListViewm
         Scaffold(
           backgroundColor: AppColors.backgroundColor,
           appBar: AppBar(
-            title: Text("Material Purchase"),
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                viewModel.setIsLoading(!viewModel.isMenuOpen);
-              },
+            centerTitle: true,
+            title: Text("Material Purchase",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14.sp,color: AppColors.primaryTextColor),),
+            leading: Container(
+              margin: EdgeInsets.only(left: 5.dp),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.floatingButtonColor,
+              ),
+              child: IconButton(
+                icon: Icon(Icons.arrow_back,color: AppColors.white,size: 18.sp,),
+                onPressed: () {
+
+                },
+              ),
             ),
             actions: [
               PopupMenuButton<String>(
@@ -42,17 +50,21 @@ class PurchaseListScreen extends BaseScreen<PurchaseListModel, PurchaseListViewm
                   return [
                     PopupMenuItem<String>(
                       value: "logout",
-                      child: Row(
-                        children: [
-                          Icon(Icons.logout, color: Colors.red),
-                          SizedBox(width: 10),
-                          Text("Logout"),
-                        ],
+                      child: Container(
+                        color: AppColors.floatingButtonColor,
+                        child: Row(
+                          children: [
+                            Icon(Icons.logout, color: AppColors.white),
+                            SizedBox(width: 10),
+                            Text("Logout",style: TextStyle(fontSize: 11.sp,fontWeight: FontWeight.w600,color: AppColors.white),),
+                          ],
+                        ),
                       ),
                     ),
                   ];
                 },
-                icon: Icon(Icons.more_vert), // More options icon
+                icon: Icon(Icons.more_vert,color: AppColors.floatingButtonColor,size: 26.sp,),
+                color: AppColors.floatingButtonColor,
               ),
             ],
           ),
