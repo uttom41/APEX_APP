@@ -8,6 +8,7 @@ import '../../core/base_entity.dart';
 class PurchaseListModel extends BaseEntity<PurchaseListModel> {
 
   bool isLoading = true;
+  bool isMenuOpen = false;
   ApiClient apiClient = ApiClient.instance;
   MaterialPurchaseResponse? purchaseResponse;
 

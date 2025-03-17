@@ -28,7 +28,6 @@ class PurchaseListViewmodel extends BaseViewModel<PurchaseListModel> {
 
   }
 
-
   void setIsLoading(bool status) {
     _entity.isLoading = status;
     updateEntity(_entity);
@@ -36,4 +35,10 @@ class PurchaseListViewmodel extends BaseViewModel<PurchaseListModel> {
 
   bool get isLoading => getEntity().isLoading;
 
+  void setIsMenuOpen(bool status) {
+    _entity.isMenuOpen = status;
+    updateEntity(_entity);
+  }
+
+  bool get isMenuOpen => getEntity().isMenuOpen;
 }
