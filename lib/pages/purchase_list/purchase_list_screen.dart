@@ -28,8 +28,7 @@ class PurchaseListScreen extends BaseScreen<PurchaseListModel, PurchaseListViewm
               PopupMenuButton<String>(
                 onSelected: (value) {
                   if (value == "logout") {
-                    // Handle logout action
-                    print("User logged out");
+                   viewModel.logOutBtn();
                   }
                  viewModel.setIsMenuOpen(!viewModel.isMenuOpen);
                 },

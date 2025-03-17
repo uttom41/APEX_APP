@@ -41,4 +41,11 @@ class PurchaseListViewmodel extends BaseViewModel<PurchaseListModel> {
   }
 
   bool get isMenuOpen => getEntity().isMenuOpen;
+
+  void logOutBtn() async {
+    await _entity.apiClient.clearToken();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Navigator.of(ref.context).pushReplacementNamed("/");
+    });
+  }
 }
